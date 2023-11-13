@@ -1,17 +1,18 @@
-import Link from 'next/link';
-import React from 'react';
+import { Button } from "@radix-ui/themes";
+import Link from "next/link";
+import React from "react";
 
 function page() {
   return (
     <div
-      className=" bg-no-repeat min-h-screen bg-gray-100 text-gray-900 flex justify-center items-center bg-cover"
+      className="bg-no-repeat min-h-screen bg-gray-100 text-gray-900 flex justify-center items-center bg-cover"
       style={{
         backgroundImage:
           'url("https://images.chesscomfiles.com/uploads/v1/images_users/tiny_mce/Pen0000000/phpQZlh1x.jpeg")',
       }}
     >
       <div className="w-full h-screen flex  justify-center items-center backdrop-brightness-50">
-        <div className=" p-6 sm:p-12 bg-white rounded-3xl">
+        <div className=" px-6 py-4 sm:p-8 bg-white rounded-3xl">
           <div className="flex justify-center">
             <svg
               width={35}
@@ -76,15 +77,7 @@ function page() {
               ADMIN DASHBOARD
             </div>
           </div>
-          <div>
-            <h5 className="font-bold text-lg text-gray-600">
-              Welcome to Dashboard Manager! 👋🏻
-            </h5>
-            <h5 className="text-gray-600">
-              Please sign-in to your account and start the adventure
-            </h5>
-          </div>
-          <div className="mt-8 flex flex-col items-center">
+          <div className=" flex flex-col items-center">
             <h1 className="text-2xl xl:text-3xl font-extrabold text-gray-600">
               Sign in
             </h1>
@@ -125,7 +118,7 @@ function page() {
                   <span className="ml-4">Sign In with GitHub</span>
                 </button>
               </div>
-              <div className="my-12 border-b text-center">
+              <div className="my-8 border-b text-center">
                 <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
                   Or sign in with e-mail
                 </div>
@@ -141,7 +134,7 @@ function page() {
                   type="password"
                   placeholder="Password"
                 />
-                <button className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                <div className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                   <svg
                     className="w-6 h-6 -ml-2"
                     fill="none"
@@ -155,7 +148,7 @@ function page() {
                     <path d="M20 8v6M23 11h-6" />
                   </svg>
                   <span className="ml-3">Sign In</span>
-                </button>
+                </div>
                 <div className="mt-4 flex justify-between items-center">
                   <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
@@ -194,15 +187,6 @@ function page() {
             </div>
           </div>
         </div>
-        {/* <div className="flex-1 bg-indigo-100 text-center hidden lg:flex">
-          <div
-            className="m-12 xl:m-16 w-full bg-contain bg-center bg-no-repeat"
-            style={{
-              backgroundImage:
-                'url("https://storage.googleapis.com/devitary-image-host.appspot.com/15848031292911696601-undraw_designer_life_w96d.svg")',
-            }}
-          ></div>
-        </div> */}
       </div>
     </div>
   );
