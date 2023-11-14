@@ -4,8 +4,19 @@ import DropdownMessage from "./DropdownMessage";
 import DropdownNotification from "./DropdownNotification";
 import DropdownUser from "./DropdownUser";
 import Image from "next/image";
-import { Avatar, Button, Flex, TextField } from "@radix-ui/themes";
-import { MagnifyingGlassIcon, BellIcon } from "@radix-ui/react-icons";
+import { MdMenu } from "react-icons/md";
+import {
+  Avatar,
+  Button,
+  DropdownMenu,
+  Flex,
+  TextField,
+} from "@radix-ui/themes";
+import {
+  MagnifyingGlassIcon,
+  BellIcon,
+  CaretDownIcon,
+} from "@radix-ui/react-icons";
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
