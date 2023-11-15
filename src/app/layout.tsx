@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { useState, useEffect } from "react";
-import Header from "@/components/Header";
-import { Theme, ThemePanel } from "@radix-ui/themes";
-import "@radix-ui/themes/styles.css";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import SideBar from "@/components/SideBar";
-import { Container } from "postcss";
+import { useState, useEffect } from 'react';
+import Header from '@/components/Header';
+import { Theme, ThemePanel } from '@radix-ui/themes';
+import '@radix-ui/themes/styles.css';
+import { Inter } from 'next/font/google';
+import './globals.css';
+import SideBar from '@/components/SideBar';
+import { Container } from 'postcss';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
