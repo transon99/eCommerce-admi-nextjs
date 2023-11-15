@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Flex, Text } from '@radix-ui/themes';
-import { BsFillBoxSeamFill } from 'react-icons/bs';
-import { FaHome, FaShoppingCart, FaUserEdit } from 'react-icons/fa';
+import { Flex, Text } from "@radix-ui/themes";
+import { BsFillBoxSeamFill } from "react-icons/bs";
+import { FaHome, FaShoppingCart, FaUserEdit } from "react-icons/fa";
 
-import classnames from 'classnames';
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { IconType } from 'react-icons';
+import classnames from "classnames";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { IconType } from "react-icons";
 
 function SideBar() {
   interface MenuData {
@@ -19,23 +19,24 @@ function SideBar() {
   const menuData: MenuData[] = [
     {
       Icon: FaHome,
-      href: '/',
-      layble: 'Dashboard',
-    },
-    {
-      Icon: FaUserEdit,
-      href: '/user',
-      layble: 'User',
+      href: "/",
+      layble: "Dashboard",
     },
     {
       Icon: BsFillBoxSeamFill,
-      href: '/product',
-      layble: 'Product',
+      href: "/product",
+      layble: "Product",
     },
     {
+      Icon: FaUserEdit,
+      href: "/user",
+      layble: "User",
+    },
+
+    {
       Icon: FaShoppingCart,
-      href: '/order',
-      layble: 'Order',
+      href: "/order",
+      layble: "Order",
     },
   ];
 
@@ -45,34 +46,24 @@ function SideBar() {
     <aside
       id="logo-sidebar"
       // className="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
-      className=" z-40 w-64 h-screen hidden md:block"
+      className="  min-w-64 hidden md:block "
       aria-label="Sidebar"
     >
-      <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
-        <Link href="/" className="flex items-center ps-2.5 mb-14">
-          <img
-            src="https://flowbite.com/docs/images/logo.svg"
-            className="h-6 me-3 sm:h-7"
-            alt="Flowbite Logo"
-          />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
-            ADMIN
-          </span>
-        </Link>
-        <Flex direction={'column'} className="space-y-2 font-medium">
+      <div className="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 rounded-lg w-64 ">
+        <Flex direction={"column"} className="space-y-2 font-medium">
           {menuData.map((tab) => (
             <Link
               key={tab.href}
               href={tab.href}
               className={classnames({
-                'bg-gray-700': tab.href === currentPath,
-                '': tab.href === currentPath,
-                'flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group':
+                "bg-gray-700": tab.href === currentPath,
+                "": tab.href === currentPath,
+                "flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group":
                   true,
               })}
             >
               <tab.Icon size={20} className="text-gray-400 " />
-              <Text ml={'3'} className="">
+              <Text ml={"3"} className="">
                 {tab.layble}
               </Text>
             </Link>

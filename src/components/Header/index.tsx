@@ -1,30 +1,31 @@
-import Link from 'next/link';
+import Link from "next/link";
 // import DarkModeSwitcher from "./DarkModeSwitcher";
-import DropdownMessage from './DropdownMessage';
-import DropdownNotification from './DropdownNotification';
-import DropdownUser from './DropdownUser';
-import Image from 'next/image';
-import { MdMenu } from 'react-icons/md';
+import DropdownMessage from "./DropdownMessage";
+import DropdownNotification from "./DropdownNotification";
+import DropdownUser from "./DropdownUser";
+import Image from "next/image";
+import { MdMenu } from "react-icons/md";
 import {
   Avatar,
   Button,
   DropdownMenu,
   Flex,
   TextField,
-} from '@radix-ui/themes';
+} from "@radix-ui/themes";
 import {
   MagnifyingGlassIcon,
   BellIcon,
   CaretDownIcon,
-} from '@radix-ui/react-icons';
+} from "@radix-ui/react-icons";
+import Input from "../Search";
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
   setSidebarOpen: (arg0: boolean) => void;
 }) => {
   return (
-    <header className="sticky top-0 z-999 flex w-full drop-shadow-1 p-4 justify-between bg-gray-800">
-      <Flex justify={'between'} width={'100%'}>
+    <header className="sticky top-0 z-40 flex w-full drop-shadow-1 p-4 justify-between bg-gray-800 rounded-md">
+      <Flex justify={"between"} width={"100%"}>
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
@@ -47,14 +48,19 @@ const Header = (props: {
             />
           </svg>
         </button>
+        <Link href="/" className="flex items-center ps-2.5 ">
+          <img
+            src="https://flowbite.com/docs/images/logo.svg"
+            className="h-6 me-3 sm:h-7"
+            alt="Flowbite Logo"
+          />
+          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+            ADMIN
+          </span>
+        </Link>
 
-        <TextField.Root size={'3'} radius="large">
-          <TextField.Slot>
-            <MagnifyingGlassIcon height="16" width="16" />
-          </TextField.Slot>
-          <TextField.Input placeholder="Search ..." />
-        </TextField.Root>
-        <Flex align={'center'}>
+        <Input placeholder="Sreach ..." />
+        <Flex align={"center"}>
           <div className="bg-gray-400 bg- p-1 rounded-full">
             <BellIcon className="h-6 w-6 hover:cursor-pointer" />
           </div>
