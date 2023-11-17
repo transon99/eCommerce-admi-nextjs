@@ -38,13 +38,13 @@ const ListBoxs = () => {
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm">
+            <Listbox.Options className="absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black/5 focus:outline-none sm:text-sm z-10">
               {people.map((person, personIdx) => (
                 <Listbox.Option
                   key={personIdx}
                   className={({ active }) =>
-                    `relative cursor-default select-none py-2 pl-10 pr-4 ${
-                      active ? "bg-amber-100 text-amber-900" : "text-gray-900"
+                    `relative select-none py-2 pl-10 pr-4 cursor-pointer ${
+                      active ? "bg-amber-100 text-amber-900 " : "text-gray-900"
                     }`
                   }
                   value={person}
