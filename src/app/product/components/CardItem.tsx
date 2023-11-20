@@ -1,37 +1,25 @@
-import {
-  Avatar,
-  Box,
-  Button,
-  Card,
-  Flex,
-  Heading,
-  Inset,
-  Strong,
-  Text,
-} from "@radix-ui/themes";
-import { FaPencil } from "react-icons/fa6";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { Button, Card, Flex, Heading, Text } from '@radix-ui/themes';
+import Link from 'next/link';
+import { FaPencil } from 'react-icons/fa6';
 
 const CardItem = () => {
   return (
     <div>
-      <Card size="2">
-        <Flex direction={"column"} gap={"3"}>
+      <Card size="2" className="bg-[#171F29]">
+        <Flex direction={'column'} gap={'3'}>
           <img
             src="https://images.unsplash.com/photo-1617050318658-a9a3175e34cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
             alt="Bold typography"
             style={{
-              display: "block",
-              objectFit: "cover",
-              width: "100%",
+              display: 'block',
+              objectFit: 'cover',
+              width: '100%',
               height: 140,
-              backgroundColor: "var(--gray-5)",
+              backgroundColor: 'var(--gray-5)',
             }}
             className="rounded-lg"
           />
-          <Flex direction={"column"} gap={"2"}>
+          <Flex direction={'column'} gap={'2'}>
             <Link href="/">
               <Heading as="h3" className="text-base">
                 PlayStation 5 Gaming Console
@@ -41,7 +29,7 @@ const CardItem = () => {
             <Text
               as="p"
               size="3"
-              weight={"medium"}
+              weight={'medium'}
               className="text-[#00BA9D] leading-[1.4]"
             >
               Available : 200
@@ -49,7 +37,7 @@ const CardItem = () => {
             <Text
               as="p"
               size="3"
-              weight={"medium"}
+              weight={'medium'}
               className="text-[#4F89FC] leading-[1.4]"
             >
               Already sold : 158
@@ -57,7 +45,7 @@ const CardItem = () => {
             <Text
               as="p"
               size="3"
-              weight={"medium"}
+              weight={'medium'}
               className="text-white leading-[1.4]"
             >
               Regular price : $199
@@ -65,7 +53,7 @@ const CardItem = () => {
             <Text
               as="p"
               size="3"
-              weight={"medium"}
+              weight={'medium'}
               className="text-white leading-[1.4]"
             >
               Sale price : $199
