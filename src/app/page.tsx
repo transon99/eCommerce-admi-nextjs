@@ -1,10 +1,14 @@
-import Image from "next/image";
+import ChartBox from '@/components/ChartBox';
+import Image from 'next/image';
+import { chartBoxProduct } from './data';
 
 export default function Home() {
   return (
     <div className="h-[calc(100vh-88px)] overflow-auto">
       <div className="p-5 grid gap-5 overflow-hidden grid-cols-4 auto-rows-[minmax(180px,auto)]">
-        <div className="p-5 rounded-xl bg-[#171F29]">Home</div>
+        <div className="p-5 rounded-xl bg-[#171F29]">
+          <ChartBox {...chartBoxProduct} />
+        </div>
         <div className="p-5 rounded-xl bg-[#171F29]">Home1</div>
         <div className="p-5 rounded-xl bg-[#171F29]">Home2</div>
         <div className="p-5 rounded-xl bg-[#171F29] col-span-1 row-span-3">

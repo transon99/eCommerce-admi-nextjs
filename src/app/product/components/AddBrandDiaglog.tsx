@@ -14,7 +14,7 @@ const AddBrandDiaglog = () => {
           size="3"
           variant="soft"
           radius="full"
-          className="w-full cursor-pointer hover:bg-[#263E7B] bg-[#2f62ff3c]"
+          className="w-full cursor-pointer hover:bg-[#263E7B] bg-[#2f62ff3c] "
         >
           Add new brand
           <PiPlusCircleBold />
