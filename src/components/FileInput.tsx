@@ -1,6 +1,8 @@
 import React from "react";
 
 const FileInput = () => {
+
+  
   return (
     <div className="max-w-sm mx-auto bg-white rounded-lg shadow-md overflow-hidden items-center">
       <div className="px-4 py-6">
