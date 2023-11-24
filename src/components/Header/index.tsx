@@ -1,23 +1,9 @@
 import Link from "next/link";
 // import DarkModeSwitcher from "./DarkModeSwitcher";
-import DropdownMessage from "./DropdownMessage";
-import DropdownNotification from "./DropdownNotification";
-import DropdownUser from "./DropdownUser";
-import Image from "next/image";
-import { MdMenu } from "react-icons/md";
-import {
-  Avatar,
-  Button,
-  DropdownMenu,
-  Flex,
-  TextField,
-} from "@radix-ui/themes";
-import {
-  MagnifyingGlassIcon,
-  BellIcon,
-  CaretDownIcon,
-} from "@radix-ui/react-icons";
+import { BellIcon } from "@radix-ui/react-icons";
+import { Flex } from "@radix-ui/themes";
 import Input from "../Search";
+import DropdownUser from "./DropdownUser";
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
@@ -54,22 +40,18 @@ const Header = (props: {
             className="h-6 me-3 sm:h-7"
             alt="Flowbite Logo"
           />
-          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+          <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white hidden md:block">
             ADMIN
           </span>
         </Link>
-
-        <Input placeholder="Sreach ..." />
+        <div className="hidden md:block">
+          <Input placeholder="Sreach ..." />
+        </div>
         <Flex align={"center"}>
           <div className="bg-gray-400 bg- p-1 rounded-full">
             <BellIcon className="h-6 w-6 hover:cursor-pointer" />
           </div>
-          <Avatar
-            className="ml-4"
-            src="https://images.unsplash.com/photo-1502823403499-6ccfcf4fb453?&w=256&h=256&q=70&crop=focalpoint&fp-x=0.5&fp-y=0.3&fp-z=1&fit=crop"
-            fallback="A"
-            radius="full"
-          />
+          <DropdownUser />
         </Flex>
       </Flex>
     </header>

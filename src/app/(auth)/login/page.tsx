@@ -1,8 +1,22 @@
+"use client";
+
 import { Button } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";
+import { useForm } from "react-hook-form";
 
-function page() {
+type LoginForm = {
+  userName: string;
+  password: string;
+};
+
+function LoginPage() {
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState: { errors },
+  } = useForm<LoginForm>();
   return (
     <div
       className="bg-no-repeat min-h-screen bg-gray-100 text-gray-900 flex justify-center items-center bg-cover"
@@ -77,12 +91,15 @@ function page() {
               ADMIN DASHBOARD
             </div>
           </div>
-          <div className=" flex flex-col items-center">
+          <form
+            className=" flex flex-col items-center"
+            onSubmit={handleSubmit((data) => console.log(data))}
+          >
             <h1 className="text-2xl xl:text-3xl font-extrabold text-gray-600">
               Sign in
             </h1>
             <div className="w-full flex-1 mt-8">
-              <div className="flex flex-col items-center">
+              {/* <div className="flex flex-col items-center">
                 <button className="w-full max-w-lg font-bold shadow-sm rounded-lg py-3 bg-indigo-100 text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
                   <div className="bg-white p-2 rounded-full">
                     <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -117,24 +134,26 @@ function page() {
                   </div>
                   <span className="ml-4">Sign In with GitHub</span>
                 </button>
-              </div>
-              <div className="my-8 border-b text-center">
+              </div> */}
+              <div className="mb-8 border-b text-center">
                 <div className="leading-none px-2 inline-block text-sm text-gray-600 tracking-wide font-medium bg-white transform translate-y-1/2">
-                  Or sign in with e-mail
+                  Sign in with user name and password
                 </div>
               </div>
               <div className="mx-auto max-w-lg">
                 <input
                   className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
-                  type="email"
-                  placeholder="Email Address"
+                  type="text"
+                  placeholder="User Name"
+                  {...register("userName")}
                 />
                 <input
                   className="w-full px-8 py-4 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white mt-5"
                   type="password"
                   placeholder="Password"
+                  {...register("password")}
                 />
-                <div className="mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                <Button className="cursor-pointer mt-5 tracking-wide font-semibold bg-indigo-500 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
                   <svg
                     className="w-6 h-6 -ml-2"
                     fill="none"
@@ -148,7 +167,7 @@ function page() {
                     <path d="M20 8v6M23 11h-6" />
                   </svg>
                   <span className="ml-3">Sign In</span>
-                </div>
+                </Button>
                 <div className="mt-4 flex justify-between items-center">
                   <div className="mb-[0.125rem] block min-h-[1.5rem] pl-[1.5rem]">
                     <input
@@ -185,11 +204,11 @@ function page() {
                 </p>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>
   );
 }
 
-export default page;
+export default LoginPage;
